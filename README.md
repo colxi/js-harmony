@@ -9,7 +9,21 @@ It provides some custom Objects types, and validations functions. The supported 
 - **Minor Scales** : 'aeolian' | 'harmonic' | 'bachian' | 'melodic'
 - **Modes**: 'ionian' | 'dorian' | 'phrygian' |	'lydian' |	'mixolydian' |	'aeolian'	|	'locrian' 
 
+### Package distribution networks :
+
+In **browser** enviroment you can include this library using the jsdelivr CDN ...
+
+`<script src='https://cdn.jsdelivr.net/gh/colxi/js-harmony@1.4/js-harmony.min.js'></script>`
+
+If you are in the **NodeJs** enviroment, can install the package via:
+
+`npm install js-harmony`
+
+---
+
 ### Usage :
+All the available methods of the library underlie on the main JSHarmony Object. 
+(**Note**: the JSHarmony.makeNote() method could be considered the starting point of most of the interactions with the Library)
 
 ```javascript
 var cNote = JSHarmony.makeNote("C##8");
@@ -40,9 +54,9 @@ Will return an Object containing the requested Item
 - `makeNote` : ƒ (noteName)
 - `makeChord` : ƒ (rootNote, type)
 - `makeChordFromGrade` : ƒ (tonallityRootNote,grade,mode,triad_FLAG)
-- `makeInterval` : ƒ (grade, quality, direction, root)
-- `makeIntervalNote` : ƒ (grade , quality, direction, root)
-- `makeScale` : ƒ (mode,name,root)
+- `makeInterval` : ƒ (grade, quality, direction, rootNote)
+- `makeIntervalNote` : ƒ (grade , quality, direction, rootNote)
+- `makeScale` : ƒ (mode,name,rootNote)
 - `getChordTypeFromGrade` : ƒ (grade,mode,triad_FLAG)
 - `getGradeMode` : ƒ (grade,mode)
 

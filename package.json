@@ -1,0 +1,15 @@
+{
+  "name": "js-harmony",
+  "version": "1.3",
+  "private": false,
+  "description": "Set of musical related methods and definitions dessigned to generate Chords, Notes, Intervals, Scales...",
+  "author": "colxi",
+  "license": "ISC",
+  "main": "js-harmony.js",
+  "dependencies": {
+
+  },
+  "devDependencies": {},
+  "scripts": {
+  }
+}

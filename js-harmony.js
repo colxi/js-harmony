@@ -1,6 +1,6 @@
 /*
 	Project Name: JSHarmony
-	Version: 1.3 (03/08/2017)
+	Version: (see package.json)
 	Author: colxi
 	Author URI: http://www.colxi.info/
 	Description: JSHarmony library is a set of musical related fuctions and definitions
@@ -71,7 +71,7 @@
 				*/
 
 				'#': 0.5,
-				'b': -0.5
+				'b': -0.5 // ♭
 			},
 			intervals: {
 				/*
@@ -285,7 +285,17 @@
 		/*
 		/ GENERATORS
 		*/
-
+		makeNote : function(name){
+			var parts = name.split('');
+			var n = new Note();
+			n.name = parts[0];
+			for(var i =1 ; i<parts.length;i++){
+				if( isNaN( parts[i] ) ) n.accidentals.push( parts[i] );
+				else n.octave = parseInt(parts[i]);
+			}
+			n.duration	= 1;
+			return n;
+		},
 		makeScale: function(mode,name,root){
 			/*
 			/	Generate asending and descending notes for requested scale. Returns an Array of notes.

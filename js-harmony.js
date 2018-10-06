@@ -2,7 +2,8 @@
 	Project Name: JSHarmony
 	Version: (see package.json)
 	Author: colxi
-	Author URI: http://www.colxi.info/
+	Author URI: http://www.colxi.info/portfolio/jsharmony-javascript-musical-library/
+	First release : Version 1.0 (04/2013)
 	Description: JSHarmony library is a set of musical related fuctions and definitions
 	dessigned to generate Chords, Notes, Intervals, Scales...
 	Provide some custom Objects types, and validations functions.
@@ -10,47 +11,49 @@
 
 
 /*
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 2 of the License, or
+	(at your option) any later version.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
 */
 
 (function(){
 	/*
-	/	Object types constructors
+	/   Object types constructors
 	*/
 
 	function Note(){
-		this.name		= null;
+		this.name       = null;
 		this.accidentals= new Array();
-		this.octave		= null;
-		this.duration	= null;
+		this.octave     = null;
+		this.duration   = null;
 	}
 
 	function Interval(){
-		this.grade	 	= null;
-		this.quality	= null;
-		this.direction	= null;
-		this.notes		= new Array();
+		this.grade      = null;
+		this.quality    = null;
+		this.direction  = null;
+		this.notes      = new Array();
 	}
 
 	function Chord(){
-		this.type 		= null;
-		this.notes 		= new Array();
+		this.type       = null;
+		this.notes      = new Array();
 	}
 
+/*
 	function Sequence(){
 		return [];
 	}
+*/
 
 
 	/*
-	/	JSHarmony class
+	/   JSHarmony class
 	*/
 
 
@@ -62,8 +65,8 @@
 				/ Definition of reference scale, and tones/semitones ditance betwen grades
 				*/
 
-				hasTone		: [true		,true	,false		,true		,true		,true		,false],
-				notes		: ['C'		,'D'	,'E'		,'F'		,'G'		,'A'		,'B']
+				hasTone     : [true     ,true   ,false      ,true       ,true       ,true       ,false],
+				notes       : ['C'      ,'D'    ,'E'        ,'F'        ,'G'        ,'A'        ,'B']
 			},
 			accidentals : {
 				/*
@@ -77,9 +80,9 @@
 				/*
 				/ Definition of the interval grades and their possible qualities
 				/ Qualities equivalences:
-				/		M 	= Major 			m 	= minor
-				/		aug = augmented	 	 	dim = diminished
-				/		P 	= perfect
+				/       M   = Major             m   = minor
+				/       aug = augmented         dim = diminished
+				/       P   = perfect
 				*/
 
 				1: {
@@ -129,27 +132,27 @@
 				/*
 				/ Scales definitions, categorized by mode.
 				/
-				/	direction		/------------------------ascending--------------------------\	/--descending scale name--\
-				/	gades:	 		 1		2		3		4		5		6		7		8
+				/   direction       /------------------------ascending--------------------------\   /--descending scale name--\
+				/   gades:           1      2       3       4       5       6       7       8
 				*/
 				major:{
-					ionian		:[	['P',	'M',	'M',	'P',	'P',	'M',	'M',	'P'],	'ionian']
+					ionian      :[  ['P',   'M',    'M',    'P',    'P',    'M',    'M',    'P'],   'ionian']
 				},
 				minor:{
-					aeolian		:[	['P',	'M',	'm',	'P',	'P',	'm',	'm',	'P'],	'aeolian'],
-					harmonic	:[	['P',	'M',	'm',	'P',	'P',	'm',	'M',	'P'],	'harmonic'],
-					bachian		:[	['P',	'M',	'm',	'P',	'P',	'M',	'M',	'P'],	'bachian'],
-					melodic		:[	['P',	'M',	'm',	'P',	'P',	'M',	'M',	'P'],	'aeolian']
+					aeolian     :[  ['P',   'M',    'm',    'P',    'P',    'm',    'm',    'P'],   'aeolian'],
+					harmonic    :[  ['P',   'M',    'm',    'P',    'P',    'm',    'M',    'P'],   'harmonic'],
+					bachian     :[  ['P',   'M',    'm',    'P',    'P',    'M',    'M',    'P'],   'bachian'],
+					melodic     :[  ['P',   'M',    'm',    'P',    'P',    'M',    'M',    'P'],   'aeolian']
 				}
 			},
 			modes:{
-				ionian			:['P',	'M',	'M',	'P',	'P',	'M',	'M',	'P'],
-				dorian			:['P',	'M',	'm',	'P',	'P',	'M',	'm',	'P'],
-				phrygian		:['P',	'm',	'm',	'P',	'P',	'm',	'm',	'P'],
-				lydian			:['P',	'M',	'M',	'aug',	'P',	'M',	'M',	'P'],
-				mixolydian		:['P',	'M',	'M',	'P',	'P',	'M',	'm',	'P'],
-				aeolian			:['P',	'M',	'm',	'P',	'P',	'm',	'm',	'P'],
-				locrian			:['P',	'm',	'm',	'P',	'dim',	'm',	'm',	'P']
+				ionian          :['P',  'M',    'M',    'P',    'P',    'M',    'M',    'P'],
+				dorian          :['P',  'M',    'm',    'P',    'P',    'M',    'm',    'P'],
+				phrygian        :['P',  'm',    'm',    'P',    'P',    'm',    'm',    'P'],
+				lydian          :['P',  'M',    'M',    'aug',  'P',    'M',    'M',    'P'],
+				mixolydian      :['P',  'M',    'M',    'P',    'P',    'M',    'm',    'P'],
+				aeolian         :['P',  'M',    'm',    'P',    'P',    'm',    'm',    'P'],
+				locrian         :['P',  'm',    'm',    'P',    'dim',  'm',    'm',    'P']
 			},
 			tetrachords: {
 				/*
@@ -158,10 +161,10 @@
 				/ tetrachord_name  :Array(Grade1 Distance, Grade2 Distance, [...] ),
 				*/
 
-				major	: [1	,1		,0.5],
-				minor	: [1	,0.5	,1],
-				armonic	: [0.5	,1.5	,0.5],
-				phrygian: [0.5	,1		,1]
+				major   : [1    ,1      ,0.5],
+				minor   : [1    ,0.5    ,1],
+				armonic : [0.5  ,1.5    ,0.5],
+				phrygian: [0.5  ,1      ,1]
 			},
 			chords: {
 				/*
@@ -170,14 +173,14 @@
 				/ chord_name  :Array( Array(grade,quality), Array(grade,quality), [...] ),
 				*/
 
-				major	:[[1,'P'],	[3,'M'],	[5,'P']],
-				minor	:[[1,'P'],	[3,'m'],	[5,'P']],
-				dim		:[[1,'P'],	[3,'m'],	[5,'dim']],
-				aug		:[[1,'P'],	[3,'M'],	[5,'aug']],
-				max7	:[[1,'P'],	[3,'M'],	[5,'P'],	[7,'M']],
-				m7		:[[1,'P'],	[3,'m'],	[5,'P'],	[7,'m']],
-				7		:[[1,'P'],	[3,'M'],	[5,'P'],	[7,'m']],
-				semidim	:[[1,'P'],	[3,'m'],	[5,'dim'],	[7,'m']]
+				major   :[[1,'P'],  [3,'M'],    [5,'P']],
+				minor   :[[1,'P'],  [3,'m'],    [5,'P']],
+				dim     :[[1,'P'],  [3,'m'],    [5,'dim']],
+				aug     :[[1,'P'],  [3,'M'],    [5,'aug']],
+				max7    :[[1,'P'],  [3,'M'],    [5,'P'],    [7,'M']],
+				m7      :[[1,'P'],  [3,'m'],    [5,'P'],    [7,'m']],
+				7       :[[1,'P'],  [3,'M'],    [5,'P'],    [7,'m']],
+				semidim :[[1,'P'],  [3,'m'],    [5,'dim'],  [7,'m']]
 			}
 		},
 
@@ -263,7 +266,7 @@
 
 			// Validate input...
 			if(notesHandler == null) throw new Error('(function: toNotesArray) Undefined input.');
-			if(	this.objType(notesHandler) != 'Note'
+			if( this.objType(notesHandler) != 'Note'
 				&& this.isNoteArray(notesHandler) == false
 				&& notesHandler.notes == undefined)
 				throw new Error('(function: toNotesArray) Unknown input');
@@ -293,16 +296,16 @@
 				if( isNaN( parts[i] ) ) n.accidentals.push( parts[i] );
 				else n.octave = parseInt(parts[i]);
 			}
-			n.duration	= 1;
+			n.duration  = 1;
 			return n;
 		},
 		makeScale: function(mode,name,root){
 			/*
-			/	Generate asending and descending notes for requested scale. Returns an Array of notes.
-			/	Arguments:
-			/		mode (string) 		: 'major' | 'minor'
-			/		name (string) 		: check this.def.scales.major &&  this.def.scales.minor definitions
-			/		root (Note Object)	: scale tonic Note Object
+			/   Generate asending and descending notes for requested scale. Returns an Array of notes.
+			/   Arguments:
+			/       mode (string)       : 'major' | 'minor'
+			/       name (string)       : check this.def.scales.major &&  this.def.scales.minor definitions
+			/       root (Note Object)  : scale tonic Note Object
 			*/
 
 			// input validation
@@ -335,8 +338,8 @@
 			/ Return a random Chord (Chord Object), complete randomly, or filling
 			/ the undespecified attributs.
 			/ Arguments:
-			/ 		root		: Note Object
-			/ 		type		: String ('maj' | 'min' | 'aug' | [...]) (More in: JSHarmony.def.chords)
+			/       root        : Note Object
+			/       type        : String ('maj' | 'min' | 'aug' | [...]) (More in: JSHarmony.def.chords)
 			*/
 
 			// validate input...
@@ -357,9 +360,9 @@
 			/ Return a random Note (Note Object), complete randomly, or filling
 			/ the undespecified attributs.
 			/ Arguments:
-			/ 		name		: String ('C' | 'D' | 'E' | 'F' | 'G' | 'A' | 'B')
-			/ 		accidentals	: Array of Strings ('b' | '#')
-			/		octave		: Positive Integer
+			/       name        : String ('C' | 'D' | 'E' | 'F' | 'G' | 'A' | 'B')
+			/       accidentals : Array of Strings ('b' | '#')
+			/       octave      : Positive Integer
 			*/
 
 			// input validation
@@ -387,9 +390,9 @@
 			if(octave == undefined) octave = Math.round(Math.random() * 3) + 1;
 
 			var note = new Note();
-			note.name		 =  name;
+			note.name        =  name;
 			note.accidentals =  accidentals;
-			note.octave		 =  octave;
+			note.octave      =  octave;
 
 			// done!
 			return note;
@@ -399,10 +402,10 @@
 			/ Returns the note (note Object), away 'number' of grades from root, in the requested
 			/ direcion, and with the requested quality.
 			/ Arguments:
-			/ 		grade		: Positive Integer
-			/ 		quality		: String ('dim' | 'm' | 'M' | 'P' | 'aug')
-			/		direction	: String ('asc' | 'desc')
-			/		root		: Note Object
+			/       grade       : Positive Integer
+			/       quality     : String ('dim' | 'm' | 'M' | 'P' | 'aug')
+			/       direction   : String ('asc' | 'desc')
+			/       root        : Note Object
 			*/
 
 			// validate input...
@@ -420,8 +423,8 @@
 
 
 			// get note name
-			var note	= new Note();
-			note.name 	= this.def.scale.notes[((direction == 'asc') ? (rootIndex + intervalSimple -1) % 7  : (rootIndex + (9 - intervalSimple) -1 ) % 7) ];
+			var note    = new Note();
+			note.name   = this.def.scale.notes[((direction == 'asc') ? (rootIndex + intervalSimple -1) % 7  : (rootIndex + (9 - intervalSimple) -1 ) % 7) ];
 
 			// get distance in semitones from root to intervalic note (force ASCENDING MODE, if necessary later will make inversion)
 			var crawler = rootIndex;
@@ -483,10 +486,10 @@
 			/ Returns an Interval Object, with the interval definition meta-data,
 			/ root note and interval note (interval.note[0] and interval.note[1]).
 			/ Arguments:
-			/ 		grade		: Positive Integer
-			/ 		quality		: String ('dim' | 'm' | 'M' | 'P' | 'aug')
-			/		direction	: String ('asc' | 'desc')
-			/		root		: Note Object
+			/       grade       : Positive Integer
+			/       quality     : String ('dim' | 'm' | 'M' | 'P' | 'aug')
+			/       direction   : String ('asc' | 'desc')
+			/       root        : Note Object
 			*/
 
 			// validate input
@@ -497,14 +500,14 @@
 
 
 			// create Interval Object
-			var interval	 	= new Interval();
-			interval.grade		= grade;
-			interval.quality	= quality;
-			interval.direction	= direction;
+			var interval        = new Interval();
+			interval.grade      = grade;
+			interval.quality    = quality;
+			interval.direction  = direction;
 			interval.notes.push(root);
 
 			// get intervalic note
-			var note	 		= this.makeIntervalNote(grade, quality, direction, root);
+			var note            = this.makeIntervalNote(grade, quality, direction, root);
 
 			// add note to interval.notes
 			interval.notes.push(note);
@@ -513,8 +516,8 @@
 		},
 		makeChordFromGrade: function(tonallityRootNote,grade,mode,triad_FLAG){
 
-			var chordType	= this.getChordTypeFromGrade(grade,mode,triad_FLAG);
-			var chord 		= this.makeChord(tonallityRootNote,chordType);
+			var chordType   = this.getChordTypeFromGrade(grade,mode,triad_FLAG);
+			var chord       = this.makeChord(tonallityRootNote,chordType);
 			return chord;
 
 		},
@@ -534,7 +537,7 @@
 
 			// search in all chords definitions, for intervals coincidences
 			var found;
-			var	chordType = null;
+			var chordType = null;
 			//iterate over each chord
 			for(var chord in this.def.chords){
 				found = true;
@@ -575,8 +578,8 @@
 			/*
 			/ Return a Chord (Chord Object),  constructed with specified attributs.
 			/ Arguments:
-			/ 		root		: Note Object
-			/ 		type		: String ('maj' | 'min' | 'aug' | [...]) (More in: JSHarmony.def.chords)
+			/       root        : Note Object
+			/       type        : String ('maj' | 'min' | 'aug' | [...]) (More in: JSHarmony.def.chords)
 			*/
 
 			// validate root and chord type
@@ -584,10 +587,10 @@
 			if(this.isNote(root) == false) throw new Error ('Invalid Note object provided');
 
 			// make new chord
-			var chord 		= new Chord();
-			chord.type 		= type;
+			var chord       = new Chord();
+			chord.type      = type;
 			// add root to chord notes
-			chord.notes[0] 	= root;
+			chord.notes[0]  = root;
 
 			// iterate over each chord member and add each interval note
 			for(var i = 1; i <= this.def.chords[type].length - 1 ; i++){

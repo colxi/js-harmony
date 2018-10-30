@@ -13,11 +13,15 @@ It provides some custom Objects types, and validations functions. The supported 
 
 In **browser** enviroment you can include this library using the jsdelivr CDN ...
 
-`<script src='https://cdn.jsdelivr.net/gh/colxi/js-harmony@1.4/js-harmony.min.js'></script>`
+```
+<script src='https://cdn.jsdelivr.net/gh/colxi/js-harmony@1.4/js-harmony.min.js'></script>
+```
 
 If you are in the **NodeJs** enviroment, can install the package via:
 
-`npm install js-harmony`
+```
+npm install js-harmony
+``` 
 
 ---
 
@@ -86,3 +90,7 @@ Many general prupose methods, and randomizers.
 ----
 
 GPL
+
+
+
+>  **Disclaimer: This package has no relation with the database focused package @apHarmony/jsharmony**
